@@ -49,8 +49,8 @@ $("#send").on("click",function() {
         uname: $("#uname").val(),
         text: $("#text").val()
     }
-    const newPostRef = push(dbRef); //Pushできる状況を作って
-    set(newPostRef, msg);           //DBに値をセットする
+    const newPostRef = push(dbRef); //ユニークKEYを生成
+    set(newPostRef, msg);           //"chat"にユニークKEYをつけてオブジェクトデータを登録
 });
 
 //データ登録(Enter)
@@ -61,8 +61,8 @@ $("#text").on("keydown",function(e){
             uname: $("#uname").val(),
             text: $("#text").val()
         }
-        const newPostRef = push(dbRef); //Pushできる状況を作って
-        set(newPostRef, msg);           //DB"chat"にオブジェクトデータをセット
+        const newPostRef = push(dbRef); //ユニークKEYを生成
+        set(newPostRef, msg);           //"chat"にユニークKEYをつけてオブジェクトデータを登録
     }
 });
 
